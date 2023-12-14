@@ -14,18 +14,44 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.16.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-chrome-driver</artifactId>
+      <version>4.16.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>RELEASE</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+  <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.8.0</version>
+    <scope>test</scope>
+  </dependency>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

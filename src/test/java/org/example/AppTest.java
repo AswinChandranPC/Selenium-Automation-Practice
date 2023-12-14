@@ -1,8 +1,8 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
+import org.testng.annotations.Test;
 
-import org.junit.Test;
+import static org.example.App.InitializeBrowser;
 
 /**
  * Unit test for simple App.
@@ -12,9 +12,12 @@ public class AppTest
     /**
      * Rigorous Test :-)
      */
+
     @Test
-    public void shouldAnswerWithTrue()
+    public void launchBrowser()
     {
-        assertTrue( true );
+        InitializeBrowser();
     }
+
+
 }
