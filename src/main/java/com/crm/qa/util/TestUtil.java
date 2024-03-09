@@ -12,8 +12,8 @@ import java.time.Duration;
 
 
 public class TestUtil extends TestBase {
-    public static long PAGE_LOAD_TIMEOUT = 20;
-    public static long IMPLICIT_WAIT = 10;
+    public static long PAGE_LOAD_TIMEOUT = 120;
+    public static long IMPLICIT_WAIT = 60;
     public static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
     public static WebElement waitForElement(WebElement element) {

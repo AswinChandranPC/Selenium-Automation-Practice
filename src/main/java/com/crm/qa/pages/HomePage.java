@@ -1,66 +1,70 @@
 package com.crm.qa.pages;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.listeners.MongoDBListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
 
 import java.time.Duration;
 
 import static com.crm.qa.util.TestUtil.highlightElement;
 import static com.crm.qa.util.TestUtil.hoverMouseOnWebelement;
 
+@Listeners(MongoDBListener.class)
 public class HomePage extends TestBase {
 
     @FindBy(xpath = "//body/div[@id='ui']/div[1]/div[1]/div[1]/a[1]/i[1]")
-    private WebElement mainMenu;
+    WebElement mainMenu;
 
     @FindBy(xpath = "//div[1]/a[1]/span[1]")
-    private WebElement homeMenu;
+    WebElement homeMenu;
 
     @FindBy(xpath = "//div[2]/a[1]/span[1]")
-    private WebElement calendarMenu;
+    WebElement calendarMenu;
 
     @FindBy(xpath = "//div[3]/a[1]/span[1]")
-    private WebElement contactsMenu;
+    WebElement contactsMenu;
 
     @FindBy(xpath = "//div[4]/a[1]/span[1]")
-    private WebElement companiesMenu;
+    WebElement companiesMenu;
 
     @FindBy(xpath = "//div[5]/a[1]/span[1]")
-    private WebElement dealsMenu;
+    WebElement dealsMenu;
 
     @FindBy(xpath = "//div[6]/a[1]/span[1]")
-    private WebElement tasksMenu;
+    WebElement tasksMenu;
 
     @FindBy(xpath = "//div[7]/a[1]/span[1]")
-    private WebElement casesMenu;
+    WebElement casesMenu;
 
     @FindBy(xpath = "//div[8]/a[1]/span[1]")
-    private WebElement callsMenu;
+    WebElement callsMenu;
 
     @FindBy(xpath = "//div[9]/a[1]/span[1]")
-    private WebElement documentsMenu;
+    WebElement documentsMenu;
 
     @FindBy(xpath = "//div[10]/a[1]/span[1]")
-    private WebElement emailMenu;
+    WebElement emailMenu;
 
     @FindBy(xpath = "//div[11]/a[1]/span[1]")
     WebElement campaignsMenu;
 
     @FindBy(xpath = "//div[12]/a[1]/span[1]")
-    private WebElement formsMenu;
+    WebElement formsMenu;
 
     @FindBy(xpath = "//div[13]/a[1]/span[1]")
-    private WebElement reportsMenu;
+    WebElement reportsMenu;
 
     public HomePage() {
         PageFactory.initElements(driver, this);
     }
-    public WebElement getPageTitle() {
+    public WebElement getPageTitle()
+    {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Aswin PC')]")));
         if (e.isDisplayed()){
@@ -151,5 +155,11 @@ public class HomePage extends TestBase {
         hoverMouseOnWebelement(driver, mainMenu);
         highlightElement(driver,formsMenu);
         return formsMenu.getText();
+    }
+
+    public String clickReportsMenu() throws InterruptedException {
+        hoverMouseOnWebelement(driver, mainMenu);
+        highlightElement(driver,reportsMenu);
+        return reportsMenu.getText();
     }
 }

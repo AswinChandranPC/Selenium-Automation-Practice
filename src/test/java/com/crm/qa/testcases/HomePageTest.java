@@ -97,6 +97,13 @@ public class HomePageTest extends TestBase {
       Assert.assertEquals(formsPageTitle,"Forms");
    }
 
+   @Test(priority = 13)
+   public void reportsMenuTest() throws InterruptedException {
+      String reportsPageTitle = homePage.clickReportsMenu();
+      System.out.println(reportsPageTitle);
+      Assert.assertEquals(reportsPageTitle,"Reports");
+   }
+
    @AfterMethod
    public void tearDown(){
       driver.close();
