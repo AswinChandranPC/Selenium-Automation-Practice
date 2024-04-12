@@ -1,21 +1,19 @@
 package com.crm.qa.pages;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.listeners.MongoDBListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Listeners;
 
 import java.time.Duration;
 
 import static com.crm.qa.util.TestUtil.highlightElement;
 import static com.crm.qa.util.TestUtil.hoverMouseOnWebelement;
 
-@Listeners(MongoDBListener.class)
+
 public class HomePage extends TestBase {
 
     @FindBy(xpath = "//body/div[@id='ui']/div[1]/div[1]/div[1]/a[1]/i[1]")
